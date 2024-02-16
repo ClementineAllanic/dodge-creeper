@@ -4,7 +4,8 @@ signal start_game
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$ScoreLabel.hide()
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,11 +19,12 @@ func show_message(text):
 	$MessageTimer.start()
 	
 func show_game_over():
+	$ScoreLabel.hide()
 	show_message("Game Over")
 	# Wait until the MessageTimer has counted down.
 	await $MessageTimer.timeout
 
-	$Message.text = "Dodge the Creeps!"
+	$Message.text = "Dodge the Pokeballs!"
 	$Message.show()
 	# Make a one-shot timer and wait for it to finish.
 	await get_tree().create_timer(1.0).timeout
@@ -33,6 +35,7 @@ func update_score(score):
 
 func _on_start_button_pressed():
 	$StartButton.hide()
+	$ScoreLabel.show()
 	start_game.emit()
 
 

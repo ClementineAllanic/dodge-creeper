@@ -18,12 +18,13 @@ var current_animation = ""
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	hide()
 	
 func play_animation(anim_name):
 	if current_animation != anim_name:
 		$AnimatedSprite2D.play(anim_name)
 		current_animation = anim_name
-
+	
 func _process(delta):
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
@@ -64,7 +65,6 @@ func _process(delta):
 
 func _on_body_entered(body):
 	hide()
-	print(body.name)
 	if body.is_in_group("mobs"):
 		body.catch()
 	hit.emit()

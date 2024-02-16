@@ -56,10 +56,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("13_tjydd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f2a3l")
 }],
 "loop": false,
 "name": &"catch",
-"speed": 10.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -81,7 +84,6 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lpmq3"]
 radius = 14.0
-height = 30.0
 
 [node name="Mob" type="RigidBody2D" groups=["mobs"]]
 collision_mask = 0
@@ -92,8 +94,6 @@ script = ExtResource("1_emhck")
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_qwijc")
 animation = &"catch"
-frame = 11
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

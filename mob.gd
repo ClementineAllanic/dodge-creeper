@@ -1,17 +1,23 @@
 extends RigidBody2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play("pokeball_rolling")
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(delta):
 	pass
 
 func catch():
-	linear_velocity = Vector2.ZERO
-	rotation = 0
-	$AnimatedSprite2D.play("catch")
+	$AnimatedSprite2D.stop()  
+	linear_velocity = Vector2.ZERO 
+	rotate_until_zero()
+	$AnimatedSprite2D.play("catch")  
+	
+func rotate_until_zero():
+	while abs(rotation) > 0.01:
+		angular_velocity = abs(rotation)*5
+		await get_tree().create_timer(0.1).timeout
+	
+

@@ -25,11 +25,9 @@ func _on_score_timer_timeout():
 	score += 1
 	$HUD.update_score(score)
 	
-
 func _on_start_timer_timeout():
 	$MobTimer.start()
 	$ScoreTimer.start()
-
 
 func _on_mob_timer_timeout():
 	# Create a new instance of the Mob scene.
