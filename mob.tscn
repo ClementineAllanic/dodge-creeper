@@ -1,52 +1,87 @@
-[gd_scene load_steps=10 format=3 uid="uid://c13dbfwqkw43v"]
+[gd_scene load_steps=20 format=3 uid="uid://c13dbfwqkw43v"]
 
-[ext_resource type="Texture2D" uid="uid://c5xg7lef1jbss" path="res://art/enemyFlyingAlt_1.png" id="1_0cnau"]
 [ext_resource type="Script" path="res://mob.gd" id="1_emhck"]
-[ext_resource type="Texture2D" uid="uid://cby27j18x8eqn" path="res://art/enemyFlyingAlt_2.png" id="2_lc5t5"]
-[ext_resource type="Texture2D" uid="uid://btvsyqawdo34d" path="res://art/enemySwimming_1.png" id="3_h045e"]
-[ext_resource type="Texture2D" uid="uid://0irn0b84an2p" path="res://art/enemySwimming_2.png" id="4_fi78e"]
-[ext_resource type="Texture2D" uid="uid://b282xq2xpnu1v" path="res://art/enemyWalking_1.png" id="5_hohbv"]
-[ext_resource type="Texture2D" uid="uid://cpsd3kibds33o" path="res://art/enemyWalking_2.png" id="6_oyfyn"]
+[ext_resource type="Texture2D" uid="uid://cn3os25gm5la8" path="res://art/sprites/Pokeball/tile112.png" id="2_8geob"]
+[ext_resource type="Texture2D" uid="uid://ueav8b4k763t" path="res://art/sprites/Pokeball/tile140.png" id="3_w78ia"]
+[ext_resource type="Texture2D" uid="uid://6euyev5eyowo" path="res://art/sprites/Pokeball/tile168.png" id="4_hq8qx"]
+[ext_resource type="Texture2D" uid="uid://dpo453mr77lqc" path="res://art/sprites/Pokeball/tile000.png" id="4_nath8"]
+[ext_resource type="Texture2D" uid="uid://c1ah000iikw1d" path="res://art/sprites/Pokeball/tile196.png" id="5_414bi"]
+[ext_resource type="Texture2D" uid="uid://sxqgwivs3p0u" path="res://art/sprites/Pokeball/tile028.png" id="5_aa24w"]
+[ext_resource type="Texture2D" uid="uid://51qhjpi55iw3" path="res://art/sprites/Pokeball/tile224.png" id="6_1f4ax"]
+[ext_resource type="Texture2D" uid="uid://i5ql120kaaod" path="res://art/sprites/Pokeball/tile056.png" id="6_umu0q"]
+[ext_resource type="Texture2D" uid="uid://ilxx0m5i8t54" path="res://art/sprites/Pokeball/tile084.png" id="7_f2a3l"]
+[ext_resource type="Texture2D" uid="uid://duat12g0bmv5a" path="res://art/sprites/Pokeball/tile252.png" id="7_wcl2w"]
+[ext_resource type="Texture2D" uid="uid://dq30ktubbpvpy" path="res://art/sprites/Pokeball/tile280.png" id="8_50enc"]
+[ext_resource type="Texture2D" uid="uid://bae80wgheiw6g" path="res://art/sprites/Pokeball/tile308.png" id="9_e36yx"]
+[ext_resource type="Texture2D" uid="uid://c8cril6nompc8" path="res://art/sprites/Pokeball/tile336.png" id="10_0r7f3"]
+[ext_resource type="Texture2D" uid="uid://db6768iig4inh" path="res://art/sprites/Pokeball/tile364.png" id="11_sybcg"]
+[ext_resource type="Texture2D" uid="uid://c1ws6f2atrnsd" path="res://art/sprites/Pokeball/tile392.png" id="12_dgw0a"]
+[ext_resource type="Texture2D" uid="uid://ok2xpee33c6a" path="res://art/sprites/Pokeball/tile476.png" id="13_tjydd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qwijc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0cnau")
+"texture": ExtResource("2_8geob")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_lc5t5")
+"texture": ExtResource("3_w78ia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hq8qx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_414bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1f4ax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wcl2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_50enc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e36yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0r7f3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sybcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dgw0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tjydd")
 }],
-"loop": true,
-"name": &"fly",
-"speed": 3.0
+"loop": false,
+"name": &"catch",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_h045e")
+"texture": ExtResource("4_nath8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fi78e")
+"texture": ExtResource("5_aa24w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_umu0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f2a3l")
 }],
 "loop": true,
-"name": &"swim",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_hohbv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_oyfyn")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 3.0
+"name": &"pokeball_rolling",
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lpmq3"]
-radius = 33.0
-height = 66.0
+radius = 14.0
+height = 30.0
 
 [node name="Mob" type="RigidBody2D" groups=["mobs"]]
 collision_mask = 0
@@ -54,12 +89,13 @@ gravity_scale = 0.0
 script = ExtResource("1_emhck")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_qwijc")
-animation = &"walk"
+animation = &"catch"
+frame = 11
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(14, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_lpmq3")
 
